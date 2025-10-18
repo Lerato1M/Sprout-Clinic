@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sprout Clinic 🌱</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header>
+    <h1>🌱 Sprout Clinic</h1>
+    <nav>
+      <button onclick="showSection('upload')">Upload Crop Issue</button>
+      <button onclick="showSection('gallery')">Disease Gallery</button>
+      <button onclick="showSection('submit')">Submit Problem</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Upload Section -->
+    <section id="upload" class="section">
+      <h2>Upload Crop Issue</h2>
+      <form id="uploadForm">
+        <input type="file" accept="image/*" />
+        <input type="text" placeholder="Crop Name" />
+        <input type="text" placeholder="Symptoms" />
+        <textarea placeholder="Additional Notes (optional)"></textarea>
+        <input type="text" placeholder="Location (optional)" />
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section" style="display:none;">
+      <h2>Disease Gallery</h2>
+      <div class="disease-card">
+        <h3>Powdery Mildew</h3>
+        <p><strong>Crops:</strong> Tomato</p>
+        <p><strong>Symptoms:</strong> White patches on leaves</p>
+        <p><strong>Treatment:</strong> Fungicide spray</p>
+      </div>
+      <div class="disease-card">
+        <h3>Rust</h3>
+        <p><strong>Crops:</strong> Wheat</p>
+        <p><strong>Symptoms:</strong> Orange-brown pustulates</p>
+        <p><strong>Treatment:</strong> Resistant Variants</p>
+      </div>
+    </section>
+
+    <!-- Submit Problem Section -->
+    <section id="submit" class="section" style="display:none;">
+      <h2>Submit a Problem</h2>
+      <form id="problemForm">
+        <input type="text" placeholder="Crop Name" />
+        <textarea placeholder="Problem Description"></textarea>
+        <input type="file" accept="image/*" />
+        <input type="text" placeholder="Location (optional)" />
+        <input type="email" placeholder="Email (optional)" />
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => section.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+  </script>
+</body>
+</html>
